@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>simple image uploader</title>
+
+ <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/pure/0.6.0/pure-min.css">
+    
+  
+  <style type='text/css'>
+    body {
+    overflow:hidden;
+}
+#ubtn {
+    font-size: 20px;
+}
+.button-success {
+    background: rgb(28, 184, 65);
+    /* this is a green */
+}
+.button-error {
+    background: rgb(202, 60, 60);
+    /* this is a maroon */
+}
+.button-warning {
+    background: rgb(223, 117, 20);
+    /* this is an orange */
+}
+.button-secondary {
+    background: rgb(66, 184, 221);
+    /* this is a light blue */
+}
+.button-success, .button-error, .button-warning, .button-secondary {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+  </style>
+</head>
+<body>
+  <div class="pure-g">
+    <div class="pure-u-1-4"></div>
+    <div class="pure-u-5-8" style="position: fixed; top: 40%;">
+        <form action="//beeimg.com/uploader/file" method="post" enctype="multipart/form-data">Select image to upload:
+            <input id="ubtn" class="pure-button pure-button-primary" type="file" name="file" id="fileToUpload">
+            <input class="pure-button button-success" type="submit" value="Upload Image" name="submit">
+        </form>
+    </div>
+    <div class="pure-u-1-4"></div>
+</div>
+<div class="pure-g">
+    <div class="pure-u-1-2"></div>
+    <div class="pure-u-1-2" style="position: fixed; bottom: -1%;">
+         <h4>© BeeIMG 2015</h4>
+
+    </div>
+    <div class="pure-u-1-2"></div>
+</div>
+  
+</body>
+</html>
