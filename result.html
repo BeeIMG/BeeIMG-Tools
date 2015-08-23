@@ -34,16 +34,29 @@
     border-radius: 4px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
+.bg-result {
+background: #0083CB none repeat scroll 0% 0%;
+padding: 1em;
+border-radius: 3px;
+color: #FFF;
+}
   </style>
+  <script type="text/javascript">
+  function get(name){
+   if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+      return decodeURIComponent(name[1]);
+}
+
+console.log(get('img'));
+  </script>
 </head>
 <body>
   <div class="pure-g">
     <div class="pure-u-1-4"></div>
-    <div class="pure-u-5-8" style="position: fixed; top: 40%;">
-        <form action="//beeimg.com/uploader/file" method="post" enctype="multipart/form-data">Select image to upload:
-            <input id="ubtn" class="pure-button pure-button-primary" type="file" name="file" id="fileToUpload">
-            <input class="pure-button button-success" type="submit" value="Upload Image" name="submit">
-        </form>
+    <div class="pure-u-5-8 pure-form" style="position: fixed; top: 15%;text-align:center;">
+	<h2 class="bg-result pure-u-1">https://beeimg.com/images/blahbalhblha.jpg</h2>
+		<img class="pure-img pure-u-1" src="https://beeimg.com/images/thumb/blahbalhblha-sm.jpg">
+		<input class="pure-u-1" type="text" value="https://beeimg.com/images/blahbalhblha.jpg" style="text-align:center;">
     </div>
     <div class="pure-u-1-4"></div>
 </div>
