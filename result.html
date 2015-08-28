@@ -24,7 +24,7 @@
 .button-warning {
     background: rgb(223, 117, 20);
     /* this is an orange */
-}
+
 .button-secondary {
     background: rgb(66, 184, 221);
     /* this is a light blue */
@@ -34,40 +34,31 @@
     border-radius: 4px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
-.bg-result {
-background: #0083CB none repeat scroll 0% 0%;
-padding: 1em;
-border-radius: 3px;
-color: #FFF;
-}
   </style>
+</head>
+<body>
+
+    <div class="pure-form" style="position: fixed; top: 15%;text-align:center;left:25%;right:25%;height:90%">
+	<h2 class="pure-u-1" id="rimg" style="text-align:center;background: #0083CB none repeat scroll 0% 0%;padding: 1em;border-radius: 3px;color: #FFF">11</h2>
+		<img class="pure-img pure-u-1" id="timg" src="">
+		<input class="pure-u-1 inimg" type="text" id="cimg" value="" style="text-align:center;">
+    </div>
+
+    <div class="" style="position:fixed;bottom:-1%;left:45%;">
+         <h4>© BeeIMG 2015</h4>
+    </div>
   <script type="text/javascript">
   function get(name){
    if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
       return decodeURIComponent(name[1]);
 }
 
-console.log(get('img'));
-  </script>
-</head>
-<body>
-  <div class="pure-g">
-    <div class="pure-u-1-4"></div>
-    <div class="pure-u-5-8 pure-form" style="position: fixed; top: 15%;text-align:center;">
-	<h2 class="bg-result pure-u-1">https://beeimg.com/images/blahbalhblha.jpg</h2>
-		<img class="pure-img pure-u-1" src="https://beeimg.com/images/thumb/blahbalhblha-sm.jpg">
-		<input class="pure-u-1" type="text" value="https://beeimg.com/images/blahbalhblha.jpg" style="text-align:center;">
-    </div>
-    <div class="pure-u-1-4"></div>
-</div>
-<div class="pure-g">
-    <div class="pure-u-1-2"></div>
-    <div class="pure-u-1-2" style="position: fixed; bottom: -1%;">
-         <h4>© BeeIMG 2015</h4>
+var imgurl = "//beeimg.com/images/" + get('img') + "." + get('ext');
+var thumbimgurl = "//beeimg.com/images/" + get('img') + "-sm." + get('ext');
 
-    </div>
-    <div class="pure-u-1-2"></div>
-</div>
-  
+document.getElementById("rimg").innerHTML = imgurl;
+document.getElementById("cimg").setAttribute("value", imgurl);
+document.getElementById("timg").setAttribute("src", thumbimgurl);
+</script>
 </body>
 </html>
