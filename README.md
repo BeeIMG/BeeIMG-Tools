@@ -7,4 +7,4 @@ This page should make no uncessary requests and should be very mobile friendly.
 
 no ads or bullshit.
 
-why should you download page that is larger than the image you trying upload??
+why should the page be larger than the image you trying upload?
