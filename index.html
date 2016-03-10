@@ -44,7 +44,7 @@
 	  <div class="col-md-4 text-center"><div class="well">
 	  <h1>Website Screen shots</h1>
 	  <p>Capture Website in JPG</p>
-	  <a class="btn btn-info disable" href="/webshots">Link</a>
+	  <a class="btn btn-info disabled" href="/webshots">Link</a>
 	  </div></div>
 	  <div class="col-md-4 text-center hidden"><div class="well">
 	  <h1>placeholder</h1>
@@ -56,5 +56,24 @@
 	<div class="text-center">
          <h4>© BeeIMG 2016</h4>
     </div>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.beeimg.com"]);
+  _paq.push(["setDomains", ["*.beeimg.com"]]);
+  _paq.push(["disableCookies"]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//p.beeimg.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//p.beeimg.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
   </body>
 </html>
