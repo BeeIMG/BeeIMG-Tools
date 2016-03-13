@@ -1,8 +1,7 @@
-# simple-image-uploader
+# beeimg tools
 simplest image uploader with no ads and very small in footprint
 
-for a latest demo goto https://simple.beeimg.com/ 
-**(Please note that this service will be moved to https://tools.beeimg.com/ domain in the future)**
+for a latest demo goto https://tools.beeimg.com/ 
 
 This page should make no uncessary requests and should be very mobile friendly.
 
