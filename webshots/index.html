@@ -40,7 +40,7 @@
 	  <h1>Simple Website Screenshot</h1>
 	  <input class="form-control" id="weburl" type="text" placeholder="paste a url to screenshot"></input><br>
 	  <a class="btn btn-info" id="geturl" href="#">Get URL</a><hr>
-	  <div class="form-control" id="result"></div>
+	  <div id="div"><div class="form-control" id="result"></div></div>
 	  </div></div>
 
     </div><!-- /.container -->
@@ -49,7 +49,7 @@
     </div>
 	<script src="https://cdn.jsdelivr.net/jquery/2.2.1/jquery.min.js"></script>
 	<script type="text/javascript">
-	$("#result").hide(); var sendurl = $("#weburl").html();
+	$("#div").hide(); var sendurl = $("#weburl").val();
 	$.ajax({
 		url: "//beeimg.com/api/webshot",
 		type: "POST",
@@ -58,7 +58,7 @@
 			url: sendurl,
 		},
 		success: function(data) {
-		$("#result").html(data.url).fadeIn();
+		$("#result").html(data.url); $("#div").fadeIn();
 		}
 	});
 	</script>
