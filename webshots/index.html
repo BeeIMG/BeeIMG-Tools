@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-    <title>BeeIMG Tools</title>
+    <title>BeeIMG Tools Webshots</title>
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/g/bootstrap@3.3.6(css/bootstrap-theme.min.css+css/bootstrap.min.css)">
   </head>
@@ -36,26 +36,32 @@
 
     <div class="container">
 
-      <div class="col-md-4 text-center"><div class="well">
-	  <h1>Simple Image Uploader</h1>
-	  <p>Upload images to BeeIMG, Simply</p>
-	  <a class="btn btn-info" href="/simple">Link</a>
-	  </div></div>
-	  <div class="col-md-4 text-center"><div class="well">
-	  <h1>Website Screen shots</h1>
-	  <p>Capture Website in JPG</p>
-	  <a class="btn btn-info disabled" href="/webshots">Link</a>
-	  </div></div>
-	  <div class="col-md-4 text-center hidden"><div class="well">
-	  <h1>placeholder</h1>
-	  <p>placeholder</p>
-	  <a class="btn btn-info" href="/">Link</a>
+      <div class="col-md-8 col-md-offset-2 text-center"><div class="well">
+	  <h1>Simple Website Screenshot</h1>
+	  <input class="form-control" id="weburl" type="text" placeholder="paste a url to screenshot"></input><br>
+	  <a class="btn btn-info" id="geturl" href="#">Get URL</a><hr>
+	  <div class="form-control" id="result"></div>
 	  </div></div>
 
     </div><!-- /.container -->
 	<div class="text-center">
          <h4>© BeeIMG 2016</h4>
     </div>
+	<script src="https://cdn.jsdelivr.net/jquery/2.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	$("#result").hide(); var sendurl = $("#weburl").html();
+	$.ajax({
+		url: "//beeimg.com/api/webshot",
+		type: "POST",
+		cache: false,
+		data: {
+			url: sendurl,
+		},
+		success: function(data) {
+		$("#result").html(data.url).fadeIn();
+		}
+	});
+	</script>
 <!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];
