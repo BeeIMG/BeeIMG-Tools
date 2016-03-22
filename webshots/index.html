@@ -39,7 +39,7 @@
       <div class="col-md-8 col-md-offset-2 text-center"><div class="well">
 	  <h1>Simple Website Screenshot</h1><h3>(Beta)</h3>
 	  <input class="form-control" id="weburl" type="text" placeholder="paste a url to screenshot"></input><br>
-	  <div class="btn btn-info" id="geturl">Get URL</div><hr>
+	  <div class="btn btn-info" id="geturl" onclick="getwebshot();">Get URL</div><hr>
 	  <div id="div"><div class="form-control" id="result"></div></div>
 	  </div></div>
 
@@ -47,9 +47,10 @@
 	<div class="text-center">
          <h4>© BeeIMG 2016</h4>
     </div>
-	<script src="https://cdn.jsdelivr.net/jquery/2.2.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery/2.2.2/jquery.min.js"></script>
 	<script type="text/javascript">
 	$("#div").hide(); var sendurl = $("#weburl").val();
+	function getwebshot(){
 	$.ajax({
 		url: "//beeimg.com/api/webshot",
 		type: "POST",
@@ -61,6 +62,7 @@
 		$("#result").html(data.url); $("#div").fadeIn();
 		}
 	});
+	}
 	</script>
 <!-- Piwik -->
 <script type="text/javascript">
