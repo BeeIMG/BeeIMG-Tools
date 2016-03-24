@@ -49,8 +49,9 @@
     </div>
 	<script src="https://cdn.jsdelivr.net/jquery/2.2.2/jquery.min.js"></script>
 	<script type="text/javascript">
-	$("#div").hide(); var sendurl = $("#weburl").val();
+	$("#div").hide();
 	function getwebshot(){
+	var sendurl = $("#weburl").val();
 	$.ajax({
 		url: "//beeimg.com/api/webshot",
 		type: "POST",
