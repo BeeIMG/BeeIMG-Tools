@@ -51,24 +51,19 @@
 	<script type="text/javascript">
 	$("#div").hide();
 	function getwebshot(){
-<<<<<<< HEAD
-	var s = $("#weburl").val();
-	if(s=='') return false;
-	alert(s);
-=======
-	var sendurl = $("#weburl").val();
->>>>>>> origin/master
-	$.ajax({
-		url: "//beeimg.com/api/webshot",
-		type: "POST",
-		cache: false,
-		data: {
-			url: s,
-		},
-		success: function(data) {
-		$("#result").html(data.url); $("#imgresult").attr('src', data.url); $("#div").fadeIn();
-		}
-	});
+		var s = $("#weburl").val();
+		if(s=='') return false;
+		$.ajax({
+			url: "//beeimg.com/api/webshot",
+			type: "POST",
+			cache: false,
+			data: {
+				url: s,
+			},
+			success: function(data) {
+			$("#result").html(data.url); $("#imgresult").attr('src', data.url); $("#div").fadeIn();
+			}
+		});
 	}
 	</script>
 <!-- Piwik -->
