@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-    <title>BeeIMG Tools</title>
+    <title>BeeIMG Tools Emoji</title>
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/g/bootstrap@3.3.6(css/bootstrap-theme.min.css+css/bootstrap.min.css)">
   </head>
@@ -36,26 +36,41 @@
 
     <div class="container">
 
-      <div class="col-md-4 text-center"><div class="well">
-	  <h1>Simple Image Uploader</h1>
-	  <p>Upload images to BeeIMG, Simply</p>
-	  <a class="btn btn-info" href="/simple">Link</a>
-	  </div></div>
-	  <div class="col-md-4 text-center"><div class="well">
-	  <h1>Website Screen shots</h1>
-	  <p>Capture Website in JPG</p>
-	  <a class="btn btn-info" href="/webshots">Link</a>
-	  </div></div>
-	  <div class="col-md-4 text-center"><div class="well">
-	  <h1>Emoji Images</h1>
-	  <p>Emoji Images URL Generator</p>
-	  <a class="btn btn-info" href="/">emoji</a>
+      <div class="col-md-8 col-md-offset-2 text-center"><div class="well">
+	  <h1>Emoji Images URL Generator</h1><h3>(Beta)</h3><hr>
+	  <div class="col-md-12">
+	  <div class="col-md-4"><input class="form-control" id="emoji" type="text" placeholder="❤ 😬 ⚽ type an emoji here"></input></div>
+	  <div class="col-md-2"><input class="form-control" id="size" type="text" placeholder="size"></input></div>
+	   <div class="col-md-4"><select class="form-control" id="providers" name="providers">
+		  <option value="" selected>select a custom provider form the list</option>
+		  <option value="twitter">Twemoji 2.0</option>
+		  <option value="google">Android 6.0.1</option>
+		  <option value="microsoft">Windows 10</option>
+		  <option value="apple">iOS 9.3</option>
+		  <option value="emojione">Emoji One 2.1</option>
+		</select></div>
+	  <div class="col-md-2"><div class="btn btn-info pull-right" id="geturl" onclick="geturl();">Get URL</div></div></div>
+	  <br><hr><div id="div"><div class="form-control" id="result"></div><br><img class="img-thumbnail" id="imgresult"></img></div>
 	  </div></div>
 
     </div><!-- /.container -->
 	<div class="text-center">
          <h4>© BeeIMG 2016</h4>
     </div>
+	<script src="https://cdn.jsdelivr.net/jquery/2.2.2/jquery.min.js"></script>
+	<script type="text/javascript">
+	$("#div").hide();
+	function geturl(){
+	var e = $("#emoji").val(); var s = $("#size").val(); var p = $("#providers").val();
+	if(e=='') return false;
+	if(s!='') {if(s<5) return false; if(s>250) return false;}
+	if((p=='') && (s=='')) var url = 'https://emoji.beeimg.com/'+e+'';
+	if(p=='') var url = 'https://emoji.beeimg.com/'+e+'/'+s+'';
+	if(s=='') var url = 'https://emoji.beeimg.com/'+e+'/'+p+'';
+	if((p!='') && (s!='') && (e!='')) var url = 'https://emoji.beeimg.com/'+e+'/'+s+'/'+p+'';
+	$("#result").html(url); $("#imgresult").attr('src', url); $("#div").fadeIn();
+	}
+	</script>
 <!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];
