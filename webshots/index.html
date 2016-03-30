@@ -51,9 +51,13 @@
 	<script type="text/javascript">
 	$("#div").hide();
 	function getwebshot(){
+<<<<<<< HEAD
 	var s = $("#weburl").val();
 	if(s=='') return false;
 	alert(s);
+=======
+	var sendurl = $("#weburl").val();
+>>>>>>> origin/master
 	$.ajax({
 		url: "//beeimg.com/api/webshot",
 		type: "POST",
