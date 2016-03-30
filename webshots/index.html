@@ -37,10 +37,10 @@
     <div class="container">
 
       <div class="col-md-8 col-md-offset-2 text-center"><div class="well">
-	  <h1>Simple Website Screenshot</h1><h3>(Beta)</h3>
-	  <input class="form-control" id="weburl" type="text" placeholder="paste a url to screenshot"></input><br>
-	  <div class="btn btn-info" id="geturl" onclick="getwebshot();">Get URL</div><hr>
-	  <div id="div"><div class="form-control" id="result"></div></div>
+	  <h1>Simple Website Screenshot</h1><h3>(Beta)</h3><hr>
+	  <div class="col-md-10"><input class="form-control" id="weburl" type="text" placeholder="paste a url to screenshot"></input></div>
+	  <div class="col-md-2"><div class="btn btn-info pull-right" id="geturl" onclick="getwebshot();">Get URL</div></div>
+	  <br><hr><div id="div"><div class="form-control" id="result"></div><br><img class="img-thumbnail" id="imgresult"></img></div>
 	  </div></div>
 
     </div><!-- /.container -->
@@ -49,17 +49,20 @@
     </div>
 	<script src="https://cdn.jsdelivr.net/jquery/2.2.2/jquery.min.js"></script>
 	<script type="text/javascript">
-	$("#div").hide(); var sendurl = $("#weburl").val();
+	$("#div").hide();
 	function getwebshot(){
+	var s = $("#weburl").val();
+	if(s=='') return false;
+	alert(s);
 	$.ajax({
 		url: "//beeimg.com/api/webshot",
 		type: "POST",
 		cache: false,
 		data: {
-			url: sendurl,
+			url: s,
 		},
 		success: function(data) {
-		$("#result").html(data.url); $("#div").fadeIn();
+		$("#result").html(data.url); $("#imgresult").attr('src', data.url); $("#div").fadeIn();
 		}
 	});
 	}
