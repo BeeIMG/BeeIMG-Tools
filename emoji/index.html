@@ -64,9 +64,9 @@
 	var e = $("#emoji").val(); var s = $("#size").val(); var p = $("#providers").val();
 	if(e=='') return false;
 	if(s!='') {if(s<5) return false; if(s>250) return false;}
-	if((p=='') && (s=='')) var url = 'https://emoji.beeimg.com/'+e+'';
 	if(p=='') var url = 'https://emoji.beeimg.com/'+e+'/'+s+'';
 	if(s=='') var url = 'https://emoji.beeimg.com/'+e+'/'+p+'';
+	if((p=='') && (s=='')) var url = 'https://emoji.beeimg.com/'+e+'';
 	if((p!='') && (s!='') && (e!='')) var url = 'https://emoji.beeimg.com/'+e+'/'+s+'/'+p+'';
 	$("#result").html(url); $("#imgresult").attr('src', url); $("#div").fadeIn();
 	}
