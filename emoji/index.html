@@ -39,8 +39,8 @@
       <div class="col-md-8 col-md-offset-2 text-center"><div class="well">
 	  <h1>Emoji Images URL Generator</h1><h3>(Beta)</h3><hr>
 	  <div class="col-md-12">
-	  <div class="col-md-4"><input class="form-control" id="emoji" type="text" placeholder="❤ 😬 ⚽ type an emoji here"></input></div>
-	  <div class="col-md-2"><input class="form-control" id="size" type="text" placeholder="size"></input></div>
+	  <div class="col-md-4"><input class="form-control" id="emoji" maxlength="1" type="text" placeholder="❤ 😬 ⚽ type an emoji here"></input></div>
+	  <div class="col-md-2"><input class="form-control" id="size" maxlength="3" type="text" placeholder="size"></input></div>
 	   <div class="col-md-4"><select class="form-control" id="providers" name="providers">
 		  <option value="" selected>select a custom provider form the list</option>
 		  <option value="twitter">Twemoji 2.0</option>
@@ -48,6 +48,8 @@
 		  <option value="microsoft">Windows 10</option>
 		  <option value="apple">iOS 9.3</option>
 		  <option value="emojione">Emoji One 2.1</option>
+		  <option value="facebook">Facebook</option>
+		  <option value="mozilla">Firefox OS 2.5</option>
 		</select></div>
 	  <div class="col-md-2"><div class="btn btn-info pull-right" id="geturl" onclick="geturl();">Get URL</div></div></div>
 	  <br><hr><div id="div"><div class="form-control" id="result"></div><br><img class="img-thumbnail" id="imgresult"></img></div>
