@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="//beeimg.com/favicon.ico">
-    <title>BeeIMG Tools Emoji</title>
+    <title>BeeIMG Tools | Emoji</title>
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/g/bootstrap@3.3.6(css/bootstrap-theme.min.css+css/bootstrap.min.css)">
   </head>
@@ -56,7 +56,11 @@
 		  <option value="emojipedia">Emojipedia</option>
 		</select></div>
 	  <div class="col-md-3 col-xs-12"><div class="btn btn-info btn-block pull-right" id="geturl" onclick="geturl();">Get URL</div></div></div>
-	  <div id="div" class="col-md-12 col-xs-12"><hr><div class="form-control" id="result"></div><br><img class="img-thumbnail" id="imgresult"></img></div>
+	  <div id="div" class="col-md-12 col-xs-12"><hr>
+	  <input class="form-control text-center" id="url"></input><br>
+	  <input class="form-control text-center" id="html"></input>
+	  <input class="form-control text-center" id="markdown"></input>
+	  <br><img class="img-thumbnail" id="imgresult"></img></div>
 	  <div id="div_try" class="col-md-12 col-xs-12"><hr><div class="btn-group" role="group">
 			  <button type="button" class="btn btn-default" value="😃">😃</button>
 			  <button type="button" class="btn btn-default" value="😬">😬</button>
@@ -96,7 +100,11 @@
 		if(s=='') var url = 'https://emoji.beeimg.com/'+e+'/'+p+'';
 		if((p=='') && (s=='')) var url = 'https://emoji.beeimg.com/'+e+'';
 		if((p!='') && (s!='') && (e!='')) var url = 'https://emoji.beeimg.com/'+e+'/'+s+'/'+p+'';
-		$("#result").html(url); $("#imgresult").attr('src', url); $("#div").fadeIn();
+		$("#url").attr('value', url);
+		$("#html").attr('value', "<img src=\""+url+"\" alt=\""+e+"\"></img>");
+		$("#markdown").attr('value', "!["+e+"]["+url+"]");
+		$("#imgresult").attr('src', url);
+		$("#div").fadeIn();
 	}
 	</script>
 <!-- Piwik -->
