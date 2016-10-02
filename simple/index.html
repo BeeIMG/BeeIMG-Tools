@@ -1,69 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>simple image uploader</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/pure/0.6.0/pure-min.css">
-    
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="simple image uploader in small size">
+    <meta name="author" content="beeimg">
+    <link rel="icon" href="https://i.beeimg.com/resources/icons/favicon.ico">
+    <title>simple image uploader | BeeIMG Tools</title>
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/g/pure@0.6.0(base-min.css+buttons-min.css)">
+	
 <style type='text/css'>
 body {
     overflow:hidden;
 }
-#ubtn {
-    font-size: 20px;
+.ubtn {
+    font-size: 110%;
+}
+.txt-center {
+    text-align: center;
+}
+.alert {
+	color: white;
+	padding: 20px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	background: rgb(0, 99, 171);
 }
 .button-success {
-    background: rgb(28, 184, 65);
-    /* this is a green */
+	color: white;
+	border-radius: 4px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	background: rgb(28, 184, 65); /* this is a green */
 }
-.button-error {
-    background: rgb(202, 60, 60);
-    /* this is a maroon */
+.box {
+	position: fixed;
+	top:40%;
+	left:25%;
 }
-.button-warning {
-    background: rgb(223, 117, 20);
-    /* this is an orange */
+.box2 {
+	position:fixed;
+	bottom:-1%;
+	width:100%;
 }
-.button-secondary {
-    background: rgb(66, 184, 221);
-    /* this is a light blue */
-}
-.button-success, .button-error, .button-warning, .button-secondary {
-    color: white;
-    border-radius: 4px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+@media only screen and (max-width: 500px) {
+    .box {
+        position: fixed;
+		top: 40%;
+		left:5%;
+    }
 }
 </style>
 </head>
 <body>
-    <div class="" style="position: fixed; top: 40%;left:25%">
-        <form action="//beeimg.com/uploader/file" method="post" enctype="multipart/form-data">Select image to upload:
-            <input id="ubtn" class="pure-button pure-button-primary" type="file" name="file" id="fileToUpload">
+   <div class="box">
+        <form action="//beeimg.com/api/upload/file/" method="post" enctype="multipart/form-data">Select image to upload:
+            <input class="pure-button pure-button-primary ubtn" type="file" name="file">
             <input class="pure-button button-success" type="submit" value="Upload Image" name="submit">
         </form>
     </div>
-    <div class="" style="position:fixed;bottom:-1%;left:50%;display:flex;justify-content:center;">
-         <h4>© BeeIMG 2016</h4>
+	<div class="alert txt-center ">
+       The image url will be returned in text. for more options check out our full uploader on https://beeimg.com/upload
     </div>
+    <div class="box2">
+         <h4 class="txt-center">© BeeIMG 2016</h4>
+    </div>
+	
 <!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-  _paq.push(["setCookieDomain", "*.beeimg.com"]);
-  _paq.push(["setDomains", ["*.beeimg.com"]]);
-  _paq.push(["disableCookies"]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//p.beeimg.com/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 1]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//p.beeimg.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<p><img src="//p.beeimg.com/piwik.php?idsite=1" style="border:0;" alt="" /></p>
 <!-- End Piwik Code -->	
 </body>
 </html>
